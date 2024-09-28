@@ -66,7 +66,89 @@ sudo ./install.sh
 Depois disso, você poderá executar os scripts simplesmente digitando o nome deles, pois tudo será copiado para o diretório /bin.
 
 
-Se precisar de mais alguma coisa, é só avisar!
+##########################################################################################
+
+HOW TO INSTALL: (ENGLISH)
+
+Download the files to a folder of your choice on your Linux system. Then, navigate to that folder using the command:
+
+cd <folder>
+
+Give execution permission to the installation script with:
+
+chmod +x install.sh
+
+Next, run the script with superuser privileges:
+
+sudo ./install.sh
+
+After that, you can execute the scripts simply by typing their names, as everything will be copied to the /bin directory.
+
+##########################################################################################
+
+O QUE CADA SCRIPT FAZ:
+
+Três arquivos de serviços Tor foram criados. Para gerenciá-los, utilize os seguintes comandos:
+
+**********************************************
+
+Parar um serviço:
+
+stoptor2 — Para parar o Tor2.
+
+stoptor3 — Para parar o Tor3.
+
+**********************************************
+
+Reiniciar um serviço:
+
+
+restartor2 — Para iniciar ou reiniciar o Tor2.
+
+restartor3 — Para iniciar ou reiniciar o Tor3.
+
+**********************************************
+
+Verificar status:
+
+
+statustor2 — Para verificar o status do Tor2.
+
+statustor3 — Para verificar o status do Tor3.
+
+**********************************************
+
+Adicionar uma bridge (obfs4):
+
+bridgestor2on — Para Tor2.
+
+bridgestor3on — Para Tor3.
+
+
+**********************************************
+
+
+Adicionar duas bridges (obfs4):
+
+bridgestor2.2on — Para Tor2.
+
+bridgestor3.2on — Para Tor3.
+
+**********************************************
+
+Remover bridges:
+
+
+bridgestor2off — Para Tor2.
+
+bridgestor3off — Para Tor3.
+
+Esses comandos garantem uma gestão eficiente dos serviços Tor e suas configurações.
+
+
+**********************************************
+
+
 
 
 
