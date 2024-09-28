@@ -1,0 +1,57 @@
+#!/bin/bash
+##############Script################################
+#START TOR SERVICE 3
+
+
+echo;
+echo "-------------------------------------------------------------------------------------------------------";
+echo "Configure proxy as socks5 127.0.0.1 9062";
+echo "For Proxychains or Proxychains4 configure /etc/proxychains.conf or /etc/proxychains4.conf or specific .conf file as below!"
+echo "dynamic_chain"
+echo "proxy_dns"
+echo "tcp_read_time_out 15000"
+echo "tcp_connect_time_out 8000"
+echo "[ProxyList]"
+echo "socks4  127.0.0.1 9062"
+echo "socks5 127.0.0.1 9062"
+echo "-------------------------------------------------------------------------------------------------------";
+echo;
+#Certifique que o tor serviço está rodando;
+sudo echo "Certify of tor hidden service is installed!";
+
+#Restartando o tor instance 3
+sudo echo "Disabling the tor instance 3"
+sudo echo "sudo systemctl disable tor3.service;";
+sudo systemctl disable tor3.service;
+sudo echo "Stopping the tor instance 3"
+sudo echo "sudo systemctl stop tor3.service;";
+sudo systemctl stop tor3.service;
+sudo echo "Restarting the tor instance 3"
+sudo echo "sudo systemctl enable tor3.service;";
+sudo systemctl enable tor3.service;
+sudo echo "";
+sudo echo "sudo systemctl start tor3.service;"
+sudo systemctl start tor3.service;
+sudo echo "sudo systemctl restart tor3.service;"
+sudo systemctl restart tor3.service;
+sudo echo "";
+sudo echo "sudo systemctl is-active tor3.service;";
+sudo systemctl is-active tor3.service;
+sudo echo "sudo systemctl status tor3.service;";
+sudo systemctl status tor3.service;
+sudo echo "";
+
+echo;
+echo "------------------------------------------------------------------------------------------------";
+echo "stoptor3 to stop tor3";
+echo "restartor3 to start or restart tor3";
+echo "statustor3 to check status of tor3";
+echo "to add 1 bridge obfs4 use: bridgestor3on to tor3, bridgestor3on to tor3, and so on... ";
+echo "to add 3 bridges obfs4 use: bridgestor3.3on to tor3, bridgestor3.3on to tor3, and so on... ";
+echo "To Eliminate Bridges in torrc files use: bridgestor3off to tor3";
+echo "------------------------------------------------------------------------------------------------";
+
+
+
+##############Script################################
+

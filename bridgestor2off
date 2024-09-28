@@ -1,0 +1,65 @@
+#!/bin/bash
+
+#bridgestor2on.sh
+#Developer Leandro Santos - https://github.com/leandroibov
+
+echo "bridgestor2off.sh";
+echo;
+#*****
+echo "Seaching tor user in the system..."
+if command -v pacman > /dev/null; then
+  TOR_USER=$(getent passwd tor | cut -d: -f1)
+elif command -v apt > /dev/null; then
+  TOR_USER=$(getent passwd debian-tor | cut -d: -f1)
+elif command -v dnf > /dev/null; then
+  TOR_USER=$(getent passwd toranon | cut -d: -f1)
+else
+    echo "Unknown distro!"
+  exit
+fi
+
+if [ -n "$TOR_USER" ]; then
+   echo "The Tor user on the system is: $TOR_USER"
+else
+  echo "Tor user not found. Please install the Tor Hidden Service."
+  echo "https://support.torproject.org/apt/"
+
+fi
+#*****
+
+
+echo;
+echo "Removing bridges for torrc.2 file... "$TOR_USER"";
+sudo rm -rf /var/tmp/torrc.2;
+sudo cat > /var/tmp/torrc.2 << EOF
+SocksPort 9060
+ControlPort 9061
+DataDirectory /var/tmp/tor2 
+EOF
+
+echo;
+echo "Verifing torrc.2 file:";
+cat /var/tmp/torrc.2;
+echo;
+
+sudo echo "Restarting: Disabling the tor instance 2"
+sudo echo "sudo systemctl disable tor2.service;";
+sudo systemctl disable tor2.service;
+sudo echo "Stopping the tor instance 2"
+sudo echo "sudo systemctl stop tor2.service;";
+sudo systemctl stop tor2.service;
+sudo echo "Restarting the tor instance 2"
+sudo echo "sudo systemctl enable tor2.service;";
+sudo systemctl enable tor2.service;
+sudo echo "";
+sudo echo "sudo systemctl start tor2.service;"
+sudo systemctl start tor2.service;
+sudo echo "sudo systemctl restart tor2.service;"
+sudo systemctl restart tor2.service;
+sudo echo "";
+sudo echo "sudo systemctl is-active tor2.service;";
+sudo systemctl is-active tor2.service;
+sudo echo "sudo systemctl status tor2.service;";
+sudo systemctl status tor2.service;
+sudo echo "";
+

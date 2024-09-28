@@ -1,0 +1,103 @@
+#!/bin/bash
+
+#bridgestor3on.sh
+#Developer Leandro Santos - https://github.com/leandroibov
+echo;
+echo "bridgestor3on.sh";
+echo "You need obfs4proxy to run bridges - links below:";
+echo "https://packages.debian.org/buster/amd64/obfs4proxy/download";
+echo "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/lyrebird";
+echo "sudo apt-get install obfs4proxy";
+echo;
+#*****
+echo "Seaching tor user in the system..."
+if command -v pacman > /dev/null; then
+  TOR_USER=$(getent passwd tor | cut -d: -f1)
+elif command -v apt > /dev/null; then
+  TOR_USER=$(getent passwd debian-tor | cut -d: -f1)
+elif command -v dnf > /dev/null; then
+  TOR_USER=$(getent passwd toranon | cut -d: -f1)
+else
+    echo "Unknown distro!"
+  exit
+fi
+
+if [ -n "$TOR_USER" ]; then
+   echo "The Tor user on the system is: $TOR_USER"
+else
+  echo "Tor user not found. Please install the Tor Hidden Service."
+  echo "https://support.torproject.org/apt/"
+
+fi
+#*****
+
+
+echo "";
+echo "Copy the Bridge as below in the terminal...";
+echo "obfs4 89.10.110.191:7634 7EC3CE9AB0640534C77FCF361C85E50A9E07F506 cert=i9s53eikMKz4BiU/yYyFpJaBfGm/9xvNf97dnkI6iPg3Ls5TRoyOwhaIQprLgPruBf/zYA iat-mode=3";
+echo;
+echo "Get bridges obfs4 in https://bridges.torproject.org/bridges";
+echo "--------------------------------------------------------------";
+read -rp "Enter the obfs4 Bridge you want to register in torrc.3:" bridge
+
+echo "--------------------------------------------------------------";
+echo "your bridge is: $bridge"
+echo "--------------------------------------------------------------";
+echo "--------------------------------------------------------------";
+read -rp "Enter the obfs4 Bridge 2 you want to register in torrc.3:" bridge2
+
+echo "--------------------------------------------------------------";
+echo "your bridge is: $bridge2"
+echo "--------------------------------------------------------------";
+echo "";
+
+echo;
+echo "Adding bridges for torrc.3 file... "$TOR_USER"";
+sudo rm -rf /var/tmp/torrc.3;
+sudo cat > /var/tmp/torrc.3 << EOF
+SocksPort 9062
+ControlPort 9063
+DataDirectory /var/tmp/tor3 
+
+UseBridges 1
+ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy managed
+Bridge "$bridge"
+Bridge "$bridge2"
+EOF
+echo;
+sudo mkdir /var/tmp/tor3;
+sudo chown "$TOR_USER":"$TOR_USER" /var/tmp/tor3;
+sudo chown "$TOR_USER":"$TOR_USER" /var/tmp/torrc.3;
+
+
+
+echo "Verifing torrc.3 file:";
+cat /var/tmp/torrc.3;
+echo;
+
+sudo echo "Restarting: Disabling the tor instance 3"
+sudo echo "sudo systemctl disable tor3.service;";
+sudo systemctl disable tor3.service;
+sudo echo "Stopping the tor instance 3"
+sudo echo "sudo systemctl stop tor3.service;";
+sudo systemctl stop tor3.service;
+sudo echo "Restarting the tor instance 3"
+sudo echo "sudo systemctl enable tor3.service;";
+sudo systemctl enable tor3.service;
+sudo echo "";
+sudo echo "sudo systemctl start tor3.service;"
+sudo systemctl start tor3.service;
+sudo echo "sudo systemctl restart tor3.service;"
+sudo systemctl restart tor3.service;
+sudo echo "";
+sudo echo "sudo systemctl is-active tor3.service;";
+sudo systemctl is-active tor3.service;
+sudo echo "sudo systemctl status tor3.service;";
+sudo systemctl status tor3.service;
+sudo echo "";
+sudo echo "Use checkbridges to verify bridge connection status...";
+sudo echo "";
+
+echo;
+
+

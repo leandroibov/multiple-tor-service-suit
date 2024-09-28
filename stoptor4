@@ -1,0 +1,21 @@
+#!/bin/bash
+##############Script################################
+#para-tor-daemon4-service
+#stoptor4.sh
+
+
+echo;
+#Certifique que o tor serviço está rodando;
+echo "Certifique que o tor serviço está instalado e rodando.";
+
+
+#Restartando o tor hidden service
+echo "Disable tor instance 4";
+echo "sudo systemctl disable tor4.service;";
+sudo systemctl disable tor4.service;
+echo "Stopping tor instance 4";
+sudo systemctl stop tor4.service;
+echo "Verify Status of tor instance 4";
+echo "sudo systemctl status tor4.service;";
+sudo systemctl status tor4.service;
+

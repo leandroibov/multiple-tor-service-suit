@@ -1,0 +1,59 @@
+#!/bin/bash
+##############Script################################
+#START TOR SERVICE 2
+echo;
+echo "-------------------------------------------------------------------------------------------------------";
+echo "Configure proxy as socks5 127.0.0.1 9060";
+echo "For Proxychains or Proxychains4 configure /etc/proxychains.conf or /etc/proxychains4.conf or specific .conf file as below!"
+echo "dynamic_chain"
+echo "proxy_dns"
+echo "tcp_read_time_out 15000"
+echo "tcp_connect_time_out 8000"
+echo "[ProxyList]"
+echo "socks4  127.0.0.1 9060"
+echo "socks5 127.0.0.1 9060"
+echo "-------------------------------------------------------------------------------------------------------";
+echo;
+
+
+#Certifique que o tor serviço está rodando;
+sudo echo "Certify of tor hidden service is installed!";
+
+#Restartando o tor instance 2
+sudo echo "Disabling the tor instance 2"
+sudo echo "sudo systemctl disable tor2.service;";
+sudo systemctl disable tor2.service;
+sudo echo "Stopping the tor instance 2"
+sudo echo "sudo systemctl stop tor2.service;";
+sudo systemctl stop tor2.service;
+sudo echo "Restarting the tor instance 2"
+sudo echo "sudo systemctl enable tor2.service;";
+sudo systemctl enable tor2.service;
+sudo echo "";
+sudo echo "sudo systemctl start tor2.service;"
+sudo systemctl start tor2.service;
+sudo echo "sudo systemctl restart tor2.service;"
+sudo systemctl restart tor2.service;
+sudo echo "";
+sudo echo "sudo systemctl is-active tor2.service;";
+sudo systemctl is-active tor2.service;
+sudo echo "sudo systemctl status tor2.service;";
+sudo systemctl status tor2.service;
+sudo echo "";
+
+echo "------------------------------------------------------------------------------------------------";
+echo "stoptor2 to stop tor2";
+echo "restartor2 to start or restart tor2";
+echo "statustor2 to check status of tor2";
+echo "to add 1 bridge obfs4 use: bridgestor2on to tor2, bridgestor3on to tor3, and so on... ";
+echo "to add 2 bridges obfs4 use: bridgestor2.2on to tor2, bridgestor3.2on to tor3, and so on... ";
+echo "To Eliminate Bridges in torrc files use: bridgestor2off to tor2";
+echo "------------------------------------------------------------------------------------------------";
+
+
+
+
+
+
+##############Script################################
+

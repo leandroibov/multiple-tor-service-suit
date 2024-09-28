@@ -1,0 +1,58 @@
+#!/bin/bash
+##############Script################################
+#START TOR SERVICE 4
+
+
+echo;
+echo "-------------------------------------------------------------------------------------------------------";
+echo "Configure proxy as socks5 127.0.0.1 9064";
+echo "For Proxychains or Proxychains4 configure /etc/proxychains.conf or /etc/proxychains4.conf or specific .conf file as below!"
+echo "dynamic_chain"
+echo "proxy_dns"
+echo "tcp_read_time_out 15000"
+echo "tcp_connect_time_out 8000"
+echo "[ProxyList]"
+echo "socks4  127.0.0.1 9064"
+echo "socks5 127.0.0.1 9064"
+echo "-------------------------------------------------------------------------------------------------------";
+echo;
+#Certifique que o tor serviço está rodando;
+sudo echo "Certify of tor hidden service is installed!";
+
+#Restartando o tor instance 4
+sudo echo "Disabling the tor instance 4"
+sudo echo "sudo systemctl disable tor4.service;";
+sudo systemctl disable tor4.service;
+sudo echo "Stopping the tor instance 4"
+sudo echo "sudo systemctl stop tor4.service;";
+sudo systemctl stop tor4.service;
+sudo echo "Restarting the tor instance 4"
+sudo echo "sudo systemctl enable tor4.service;";
+sudo systemctl enable tor4.service;
+sudo echo "";
+sudo echo "sudo systemctl start tor4.service;"
+sudo systemctl start tor4.service;
+sudo echo "sudo systemctl restart tor4.service;"
+sudo systemctl restart tor4.service;
+sudo echo "";
+sudo echo "sudo systemctl is-active tor4.service;";
+sudo systemctl is-active tor4.service;
+sudo echo "sudo systemctl status tor4.service;";
+sudo systemctl status tor4.service;
+sudo echo "";
+echo;
+
+echo "------------------------------------------------------------------------------------------------";
+echo "stoptor4 to stop tor4";
+echo "restartor4 to start or restart tor4";
+echo "statustor4 to check status of tor4";
+echo "to add 1 bridge obfs4 use: bridgestor4on to tor4, bridgestor4on to tor4, and so on... ";
+echo "to add 4 bridges obfs4 use: bridgestor4.4on to tor4, bridgestor4.4on to tor4, and so on... ";
+echo "To Eliminate Bridges in torrc files use: bridgestor4off to tor4";
+echo "------------------------------------------------------------------------------------------------";
+
+
+
+
+##############Script################################
+

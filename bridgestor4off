@@ -1,0 +1,65 @@
+#!/bin/bash
+
+#bridgestor4on.sh
+#Developer Leandro Santos - https://github.com/leandroibov
+
+echo "bridgestor4off.sh";
+echo;
+#*****
+echo "Seaching tor user in the system..."
+if command -v pacman > /dev/null; then
+  TOR_USER=$(getent passwd tor | cut -d: -f1)
+elif command -v apt > /dev/null; then
+  TOR_USER=$(getent passwd debian-tor | cut -d: -f1)
+elif command -v dnf > /dev/null; then
+  TOR_USER=$(getent passwd toranon | cut -d: -f1)
+else
+    echo "Unknown distro!"
+  exit
+fi
+
+if [ -n "$TOR_USER" ]; then
+   echo "The Tor user on the system is: $TOR_USER"
+else
+  echo "Tor user not found. Please install the Tor Hidden Service."
+  echo "https://support.torproject.org/apt/"
+
+fi
+#*****
+
+
+echo;
+echo "Removing bridges for torrc.4 file... "$TOR_USER"";
+sudo rm -rf /var/tmp/torrc.4;
+sudo cat > /var/tmp/torrc.4 << EOF
+SocksPort 9064
+ControlPort 9065
+DataDirectory /var/tmp/tor4 
+EOF
+
+echo;
+echo "Verifing torrc.4 file:";
+cat /var/tmp/torrc.4;
+echo;
+
+sudo echo "Restarting: Disabling the tor instance 4"
+sudo echo "sudo systemctl disable tor4.service;";
+sudo systemctl disable tor4.service;
+sudo echo "Stopping the tor instance 4"
+sudo echo "sudo systemctl stop tor4.service;";
+sudo systemctl stop tor4.service;
+sudo echo "Restarting the tor instance 4"
+sudo echo "sudo systemctl enable tor4.service;";
+sudo systemctl enable tor4.service;
+sudo echo "";
+sudo echo "sudo systemctl start tor4.service;"
+sudo systemctl start tor4.service;
+sudo echo "sudo systemctl restart tor4.service;"
+sudo systemctl restart tor4.service;
+sudo echo "";
+sudo echo "sudo systemctl is-active tor4.service;";
+sudo systemctl is-active tor4.service;
+sudo echo "sudo systemctl status tor4.service;";
+sudo systemctl status tor4.service;
+sudo echo "";
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+##############Script################################
+#status-tor-daemon3-service
+
+
+echo;
+#Certifique que o tor serviço está rodando;
+echo "Certifique que o tor serviço está instalado e rodando.";
+
+
+#Status tor instance 3
+echo "sudo systemctl status tor3.service;";
+sudo systemctl status tor3.service;
+
