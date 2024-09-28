@@ -220,7 +220,28 @@ These commands ensure efficient management of Tor services and their configurati
 
 **********************************************
 
+#######################################################################################
 
+Exemple of configuration for browsers or proxychains...
+
+To configure your proxy settings for Tor, set the proxy as socks5 127.0.0.1 9060. For Proxychains or Proxychains4, modify the configuration files located at /etc/proxychains.conf, /etc/proxychains4.conf, or any specific .conf file with the following settings:
+
+
+dynamic_chain
+
+proxy_dns
+
+tcp_read_time_out 15000
+
+tcp_connect_time_out 8000
+
+[ProxyList]
+
+socks4 127.0.0.1 9060
+
+socks5 127.0.0.1 9060
+
+Ensure that these configurations are properly implemented to facilitate effective routing through the Tor network.
 
 
 
