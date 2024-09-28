@@ -40,3 +40,34 @@ b092225cbb079dd1b7d57d0de81a16a94e6a6da1dbf039eb13cbda7fda8c73db  statustor2
 
 921344ad55f55a6a0c54c9d7fcf59baf8d85af1e4ed610757e58fd7c37ecbdb1  stoptor4
 
+
+####################################################################################
+
+COMO INSTALAR: (PORTUGUESE)
+
+Baixe os arquivos para uma pasta de sua escolha no seu Linux. Em seguida, navegue até essa pasta usando o comando:
+
+
+cd <pasta>
+
+
+Dê permissão de execução ao script de instalação com:
+
+
+chmod +x install.sh
+
+
+E então execute o script com privilégios de superusuário:
+
+
+sudo ./install.sh
+
+
+Depois disso, você poderá executar os scripts simplesmente digitando o nome deles, pois tudo será copiado para o diretório /bin.
+
+
+Se precisar de mais alguma coisa, é só avisar!
+
+
+
+
