@@ -98,6 +98,8 @@ stoptor2 — Para parar o Tor2.
 
 stoptor3 — Para parar o Tor3.
 
+stoptor4 — Para parar o Tor4.
+
 **********************************************
 
 Reiniciar um serviço:
@@ -106,6 +108,8 @@ Reiniciar um serviço:
 restartor2 — Para iniciar ou reiniciar o Tor2.
 
 restartor3 — Para iniciar ou reiniciar o Tor3.
+
+restartor4 — Para iniciar ou reiniciar o Tor4.
 
 **********************************************
 
@@ -116,6 +120,8 @@ statustor2 — Para verificar o status do Tor2.
 
 statustor3 — Para verificar o status do Tor3.
 
+statustor4 — Para verificar o status do Tor4.
+
 **********************************************
 
 Adicionar uma bridge (obfs4):
@@ -123,6 +129,8 @@ Adicionar uma bridge (obfs4):
 bridgestor2on — Para Tor2.
 
 bridgestor3on — Para Tor3.
+
+bridgestor4on — Para Tor4.
 
 
 **********************************************
@@ -134,6 +142,8 @@ bridgestor2.2on — Para Tor2.
 
 bridgestor3.2on — Para Tor3.
 
+bridgestor4.2on — Para Tor4.
+
 **********************************************
 
 Remover bridges:
@@ -143,10 +153,74 @@ bridgestor2off — Para Tor2.
 
 bridgestor3off — Para Tor3.
 
+bridgestor4off — Para Tor4.
+
 Esses comandos garantem uma gestão eficiente dos serviços Tor e suas configurações.
 
 
 **********************************************
+
+#################################################################################################
+
+(ENGLISH)
+
+### Commands for Managing Tor Services
+
+Three Tor service files have been created. To manage them, use the following commands:
+
+**********************************************
+
+**Stop a service:**
+
+- `stoptor2` — To stop Tor2.
+
+- `stoptor3` — To stop Tor3.
+
+**********************************************
+
+**Restart a service:**
+
+- `restartor2` — To start or restart Tor2.
+
+- `restartor3` — To start or restart Tor3.
+
+**********************************************
+
+**Check status:**
+
+- `statustor2` — To check the status of Tor2.
+
+- `statustor3` — To check the status of Tor3.
+
+**********************************************
+
+**Add a bridge (obfs4):**
+
+- `bridgestor2on` — For Tor2.
+
+- `bridgestor3on` — For Tor3.
+
+**********************************************
+
+**Add two bridges (obfs4):**
+
+- `bridgestor2.2on` — For Tor2.
+
+- `bridgestor3.2on` — For Tor3.
+
+**********************************************
+
+**Remove bridges:**
+
+- `bridgestor2off` — For Tor2.
+
+- `bridgestor3off` — For Tor3.
+
+These commands ensure efficient management of Tor services and their configurations.
+
+**********************************************
+
+
 
 
 
