@@ -177,119 +177,74 @@ echo "Coping scripts to /bin";
 echo "sudo chmod +x 3-tors bridgestor1off bridgestor2off bridgestor3off bridgestor4off menu_tors restartor2 statustor1 statustor4 stoptor3 3-tors-remove bridgestor1on bridgestor2on bridgestor3on bridgestor4on proxychains_3tors restartor3 statustor2 stoptor1 stoptor4 bridgestor1.2on bridgestor2.2on bridgestor3.2on bridgestor4.2on restartor1 restartor4 statustor3 stoptor2 /bin;";
 echo "&";
 echo "sudo cp -r 3-tors bridgestor1off bridgestor2off bridgestor3off bridgestor4off menu_tors restartor2 statustor1 statustor4 stoptor3 3-tors-remove bridgestor1on bridgestor2on bridgestor3on bridgestor4on proxychains_3tors restartor3 statustor2 stoptor1 stoptor4 bridgestor1.2on bridgestor2.2on bridgestor3.2on bridgestor4.2on restartor1 restartor4 statustor3 stoptor2 /bin;";
-sudo chmod +x 3-tors bridgestor1off bridgestor2off bridgestor3off bridgestor4off menu_tors restartor2 statustor1 statustor4 stoptor3 3-tors-remove bridgestor1on bridgestor2on bridgestor3on bridgestor4on proxychains_3tors restartor3 statustor2 stoptor1 stoptor4 bridgestor1.2on bridgestor2.2on bridgestor3.2on bridgestor4.2on restartor1 restartor4 statustor3 stoptor2 proxychains-exemples /bin;
-sudo cp -r 3-tors bridgestor1off bridgestor2off bridgestor3off bridgestor4off menu_tors restartor2 statustor1 statustor4 stoptor3 3-tors-remove bridgestor1on bridgestor2on bridgestor3on bridgestor4on proxychains_3tors restartor3 statustor2 stoptor1 stoptor4 bridgestor1.2on bridgestor2.2on bridgestor3.2on bridgestor4.2on restartor1 restartor4 statustor3 stoptor2 proxychains-exemples /bin;
+sudo chmod +x 3-tors bridgestor1off bridgestor2off bridgestor3off bridgestor4off menu_tors restartor2 statustor1 statustor4 stoptor3 3-tors-remove bridgestor1on bridgestor2on bridgestor3on bridgestor4on proxychains_3tors restartor3 statustor2 stoptor1 stoptor4 bridgestor1.2on bridgestor2.2on bridgestor3.2on bridgestor4.2on restartor1 restartor4 statustor3 stoptor2 proxychains-exemples Instructions /bin;
+sudo cp -r 3-tors bridgestor1off bridgestor2off bridgestor3off bridgestor4off menu_tors restartor2 statustor1 statustor4 stoptor3 3-tors-remove bridgestor1on bridgestor2on bridgestor3on bridgestor4on proxychains_3tors restartor3 statustor2 stoptor1 stoptor4 bridgestor1.2on bridgestor2.2on bridgestor3.2on bridgestor4.2on restartor1 restartor4 statustor3 stoptor2 proxychains-exemples Instructions /bin;
 
 
-echo "";
 
 echo;
 
+echo "************";
+echo "Instructions";
+echo "What Each Command Does?";
+echo "1) 3-tors #Creates service files in /etc/systemd/system/"
+echo "2) 3-tors-remove #Removes service files in /etc/systemd/system/ if you want to do maintenance!"
 
-
-echo "---------------------------------------------------------------------------------------------------------------------------";
-echo "INSTRUCTIONS HOW USE IT...";
-echo "3 tor services files created, to run, run with bridges, stop and delete follow:";
-echo "Type menu_tors in your terminal and select your option or... typing the name of the command..."
-echo "stoptor2 to stop tor2, stoptor3 to top tor3 and so on...";
-echo "restartor2 to start or restart tor2, restartor3 to start or restart tor3, and so on...";
-echo "statustor2 to check status of tor2, statustor3 to check status of tor3, and so on...";
-echo "to add 1 bridge obfs4 use: bridgestor2on to tor2, bridgestor3on to tor3, and so on... ";
-echo "to add 2 bridges obfs4 use: bridgestor2.2on to tor2, bridgestor3.2on to tor3, and so on... ";
-echo "To Eliminate Bridges in torrc files use: bridgestor2off to tor2, bridgestor2off to tor3, and so on, and the files will be as original file configuration without bridges!";
-echo "";
-echo "---------------------------------------------------------------------------------------------------------------------------";
-echo "Warning about proxychains4 with tor instances...";
-echo "Examples... of multiple proxychains4 with multiple instances of the Tor service!";
-echo "---------------------------------------------------------------------------------";
-echo "For ~/Download folder of the current user...";
-echo "proxychains4 firefox"; 
-echo "proxychains4 -f ~/Downloads/proxychains4.2.conf ~/Downloads/Cake_nano_wallet/cake_wallet/cake_wallet";
-echo "proxychains4 -f ~/Downloads/proxychains4.3.conf ~/Telegram/Telegram";
-echo "proxychains4 -f ~/Downloads/proxychains4.4.conf ~/Downloads/Electrum/electrum-4.5.5-x86_64.AppImage";
-echo "proxychains4 -f ~/Downloads/proxychains4.4.conf signal-desktop";
-echo "proxychains4 -f ~/Downloads/proxychains4.3.conf brave-browser";
-echo "proxychains4 -f ~/Downloads/proxychains4.2.conf pidgin";
 echo;
-echo "In the folder with the .conf file...";
-echo "proxychains4 -f proxychains4.2.conf firefox";
-echo "proxychains4 -f proxychains4.3.conf ./cake_wallet";
-echo "proxychains4 -f proxychains4.4.conf signal-desktop";
-echo "";
-echo "For /etc folder...";
-echo "proxychains4 -f /etc/proxychains.conf firefox"; 
-echo "proxychains4 -f /etc/proxychains4.2.conf ~/Downloads/Cake_nano_wallet/cake_wallet/cake_wallet";
-echo "proxychains4 -f /etc/proxychains4.3.conf ~/Telegram/Telegram";
-echo "proxychains4 -f /etc/proxychains4.4.conf ~/Downloads/Electrum/electrum-4.5.5-x86_64.AppImage";
-echo "proxychains4 -f /etc/proxychains4.4.conf signal-desktop";
-echo "proxychains4 -f /etc/proxychains4.3.conf brave-browser";
-echo "proxychains4 -f /etc/proxychains4.2.conf pidgin";
-echo "";
-echo "";
-echo "---------------------------------------------------------------------------------------------------------------------------";
-echo "";
+echo "Tor Instance1";
+echo "3) restartor1 #Starts or restarts instance 1 of Tor for 127.0.0.1 9050"
+echo "4) statustor1 #Checks the status of instance 1 of Tor"
+echo "5) stoptor1 #Stops instance 1 of Tor"
+echo "6) bridgestor1on #Adds an obfs4 bridge to instance 1 of Tor"
+echo "7) bridgestor1.2on #Adds two obfs4 bridges to instance 1 of Tor"
+echo "8) bridgestor1off #Removes all bridges from instance 1 of Tor. /etc/tor/torrc will be as default!"
+
+echo;
+echo "Tor Instance2";
+echo "3) restartor2 #Starts or restarts instance 2 of Tor for 127.0.0.2 9060"
+echo "4) statustor2 #Checks the status of instance 2 of Tor"
+echo "5) stoptor2 #Stops instance 2 of Tor"
+echo "6) bridgestor2on #Adds an obfs4 bridge to instance 2 of Tor"
+echo "7) bridgestor2.2on #Adds two obfs4 bridges to instance 2 of Tor"
+echo "8) bridgestor2off #Removes all bridges from instance 2 of Tor"
+
+echo;
+echo "Tor Instance3";
+echo "3) restartor3 #Starts or restarts instance 3 of Tor for 127.0.0.3 9062"
+echo "4) statustor3 #Checks the status of instance 3 of Tor"
+echo "5) stoptor3 #Stops instance 3 of Tor"
+echo "6) bridgestor3on #Adds an obfs4 bridge to instance 3 of Tor"
+echo "7) bridgestor3.3on #Adds two obfs4 bridges to instance 3 of Tor"
+echo "8) bridgestor3off #Removes all bridges from instance 3 of Tor"
+
+echo;
+echo "Tor Instance4";
+echo "4) restartor4 #Starts or restarts instance 4 of Tor for 127.0.0.4 9064"
+echo "4) statustor4 #Checks the status of instance 4 of Tor"
+echo "5) stoptor4 #Stops instance 4 of Tor"
+echo "6) bridgestor4on #Adds an obfs4 bridge to instance 4 of Tor"
+echo "7) bridgestor4.4on #Adds two obfs4 bridges to instance 4 of Tor"
+echo "8) bridgestor4off #Removes all bridges from instance 4 of Tor"
+
+echo;
+echo "Creating proxychains4 .conf files in your ~/Download and /etc";
+echo "27) proxychains_3tors #Creates 3 .conf files, each for a different instance in /etc and ~/Downloads for all users!"
+echo "28) proxychains-examples #Shows example commands to be executed with the created proxychains4.conf files for each instance!"
+echo "Conf files for proxychains created..."
+echo "proxychains4.2.conf #for Tor instance 2 for 127.0.0.1 9060"
+echo "proxychains4.3.conf #for Tor instance 3 for 127.0.0.1 9062"
+echo "proxychains4.4.conf #for Tor instance 4 for 127.0.0.1 9064"
+echo "/etc/proxychains4.conf #for Tor instance 1 that by default runs on 127.0.0.1 9050"
+echo
+
+echo "Conveniences and maintenance"
+echo "30) checkbridges #Checks if the bridges are connecting and working"
+    
+echo "0) Exit"
+echo "------------------------------------------------------------------------------------";
+echo;
 ########
 
-
-###*****Instruções...
-echo "Manual Commands for Tor Instances ";
-echo "To reload the systemd manager configuration, run:"
-echo "sudo systemctl daemon-reload"
-echo;
-
-echo "To start one tor instance, run:"
-echo "sudo systemctl start tor.service"
-echo "sudo systemctl start tor2.service"
-echo "sudo systemctl start tor3.service"
-echo "sudo systemctl start tor4.service"
-
-echo "etc..."
-echo;
-
-echo "To restart one tor instance, run:"
-echo "sudo systemctl restart tor.service"
-echo "sudo systemctl restart tor2.service"
-echo "sudo systemctl restart tor3.service"
-echo "sudo systemctl restart tor4.service"
-
-echo "etc..."
-echo;
-
-echo "To enable one tor instance to start on boot, run:"
-echo "sudo systemctl enable tor.service"
-echo "sudo systemctl enable tor2.service"
-echo "sudo systemctl enable tor3.service"
-echo "sudo systemctl enable tor4.service"
-
-echo "etc..."
-echo;
-
-echo "To check the status one tor instance, run:"
-echo "sudo systemctl status tor.service"
-echo "sudo systemctl status tor2.service"
-echo "sudo systemctl status tor3.service"
-echo "sudo systemctl status tor4.service"
-
-echo "etc..."
-echo;
-
-echo "To stop one tor instance, run:"
-echo "sudo systemctl stop tor.service"
-echo "sudo systemctl stop tor2.service"
-echo "sudo systemctl stop tor3.service"
-echo "sudo systemctl stop tor4.service"
-
-echo "etc..."
-echo;
-
-echo "To disable one tor instance from starting on boot, run:"
-echo "sudo systemctl disable tor.service"
-echo "sudo systemctl disable tor2.service"
-echo "sudo systemctl disable tor3.service"
-echo "sudo systemctl disable tor4.service"
-
-echo "etc..."
-echo;
 
 #Delete all tor2.service Files to rebuilding as maintanance
 #sudo rm -rf /var/tmp/torrc.2 /var/tmp/tor2 /etc/systemd/system/tor2.service /var/tmp/torrc.3 /var/tmp/tor3 /etc/systemd/system/tor3.service /var/tmp/torrc.4 /var/tmp/tor4 /etc/systemd/system/tor4.service /var/tmp/torrc.5 /var/tmp/tor5 /etc/systemd/system/tor5.service /var/tmp/torrc.6 /var/tmp/tor6 /etc/systemd/system/tor6.service /var/tmp/torrc.7 /var/tmp/tor7 /etc/systemd/system/tor7.service /var/tmp/torrc.8 /var/tmp/tor8 /etc/systemd/system/tor8.service /var/tmp/torrc.9 /var/tmp/tor9 /etc/systemd/system/tor9.service
