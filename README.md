@@ -69,33 +69,6 @@ e78fd2481430f4e9be849fa4b44167d935744700c8e1ca6d5c93c2572558ea09  uninstall.sh
 
 ####################################################################################
 
-COMO INSTALAR: (PORTUGUESE)
-
-Baixe os arquivos para uma pasta de sua escolha no seu Linux. Em seguida, navegue até essa pasta usando o comando:
-
-
-cd <pasta>
-
-
-Dê permissão de execução ao script de instalação com:
-
-
-chmod +x install.sh
-
-
-E então execute o script com privilégios de superusuário:
-
-
-sudo ./install.sh
-
-
-Depois disso, digite no terminal menu_tors e selecione as opções desejadas ou
-
-
-você poderá executar os scripts simplesmente digitando o nome deles, pois tudo será copiado para o diretório /bin.
-
-
-##########################################################################################
 
 HOW TO INSTALL: (ENGLISH)
 
@@ -117,162 +90,60 @@ you can execute the scripts simply by typing their names, as everything will be 
 
 ##########################################################################################
 
-O QUE CADA SCRIPT FAZ:
+After run menu_tors ...
+
+Instructions
+What Each Command Does?
+1) 3-tors #Creates service files in /etc/systemd/system/
+2) 3-tors-remove #Removes service files in /etc/systemd/system/ if you want to do maintenance!
+
+Tor Instance1
+3) restartor1 #Starts or restarts instance 1 of Tor for 127.0.0.1 9050
+4) statustor1 #Checks the status of instance 1 of Tor
+5) stoptor1 #Stops instance 1 of Tor
+6) bridgestor1on #Adds an obfs4 bridge to instance 1 of Tor
+7) bridgestor1.2on #Adds two obfs4 bridges to instance 1 of Tor
+8) bridgestor1off #Removes all bridges from instance 1 of Tor. /etc/tor/torrc will be as default!
+
+Tor Instance2
+3) restartor2 #Starts or restarts instance 2 of Tor for 127.0.0.2 9060
+4) statustor2 #Checks the status of instance 2 of Tor
+5) stoptor2 #Stops instance 2 of Tor
+6) bridgestor2on #Adds an obfs4 bridge to instance 2 of Tor
+7) bridgestor2.2on #Adds two obfs4 bridges to instance 2 of Tor
+8) bridgestor2off #Removes all bridges from instance 2 of Tor
+
+Tor Instance3
+3) restartor3 #Starts or restarts instance 3 of Tor for 127.0.0.3 9062
+4) statustor3 #Checks the status of instance 3 of Tor
+5) stoptor3 #Stops instance 3 of Tor
+6) bridgestor3on #Adds an obfs4 bridge to instance 3 of Tor
+7) bridgestor3.3on #Adds two obfs4 bridges to instance 3 of Tor
+8) bridgestor3off #Removes all bridges from instance 3 of Tor
+
+Tor Instance4
+4) restartor4 #Starts or restarts instance 4 of Tor for 127.0.0.4 9064
+4) statustor4 #Checks the status of instance 4 of Tor
+5) stoptor4 #Stops instance 4 of Tor
+6) bridgestor4on #Adds an obfs4 bridge to instance 4 of Tor
+7) bridgestor4.4on #Adds two obfs4 bridges to instance 4 of Tor
+8) bridgestor4off #Removes all bridges from instance 4 of Tor
+
+Creating proxychains4 .conf files in your ~/Download and /etc
+27) proxychains_3tors #Creates 3 .conf files, each for a different instance in /etc and ~/Downloads for all users!
+28) proxychains-examples #Shows example commands to be executed with the created proxychains4.conf files for each instance!
+Conf files for proxychains created...
+proxychains4.2.conf #for Tor instance 2 for 127.0.0.1 9060
+proxychains4.3.conf #for Tor instance 3 for 127.0.0.1 9062
+proxychains4.4.conf #for Tor instance 4 for 127.0.0.1 9064
+/etc/proxychains4.conf #for Tor instance 1 that by default runs on 127.0.0.1 9050
+
+Conveniences and maintenance
+30) checkbridges #Checks if the bridges are connecting and working
+0) Exit
+
+------------------------------------------------------------------------------------
 
-Três arquivos de serviços Tor foram criados. Para gerenciá-los, utilize os seguintes comandos:
-
-**********************************************
-
-Parar um serviço:
-
-stoptor2 — Para parar o Tor2.
-
-stoptor3 — Para parar o Tor3.
-
-stoptor4 — Para parar o Tor4.
-
-**********************************************
-
-Reiniciar um serviço:
-
-
-restartor2 — Para iniciar ou reiniciar o Tor2.
-
-restartor3 — Para iniciar ou reiniciar o Tor3.
-
-restartor4 — Para iniciar ou reiniciar o Tor4.
-
-**********************************************
-
-Verificar status:
-
-
-statustor2 — Para verificar o status do Tor2.
-
-statustor3 — Para verificar o status do Tor3.
-
-statustor4 — Para verificar o status do Tor4.
-
-**********************************************
-
-Adicionar uma bridge (obfs4):
-
-bridgestor2on — Para Tor2.
-
-bridgestor3on — Para Tor3.
-
-bridgestor4on — Para Tor4.
-
-
-**********************************************
-
-
-Adicionar duas bridges (obfs4):
-
-bridgestor2.2on — Para Tor2.
-
-bridgestor3.2on — Para Tor3.
-
-bridgestor4.2on — Para Tor4.
-
-**********************************************
-
-Remover bridges:
-
-
-bridgestor2off — Para Tor2.
-
-bridgestor3off — Para Tor3.
-
-bridgestor4off — Para Tor4.
-
-Esses comandos garantem uma gestão eficiente dos serviços Tor e suas configurações.
-
-
-**********************************************
-
-#################################################################################################
-
-(ENGLISH)
-
-### Commands for Managing Tor Services
-
-Three Tor service files have been created. To manage them, use the following commands:
-
-**********************************************
-
-**Stop a service:**
-
-- `stoptor2` — To stop Tor2.
-
-- `stoptor3` — To stop Tor3.
-
-**********************************************
-
-**Restart a service:**
-
-- `restartor2` — To start or restart Tor2.
-
-- `restartor3` — To start or restart Tor3.
-
-**********************************************
-
-**Check status:**
-
-- `statustor2` — To check the status of Tor2.
-
-- `statustor3` — To check the status of Tor3.
-
-**********************************************
-
-**Add a bridge (obfs4):**
-
-- `bridgestor2on` — For Tor2.
-
-- `bridgestor3on` — For Tor3.
-
-**********************************************
-
-**Add two bridges (obfs4):**
-
-- `bridgestor2.2on` — For Tor2.
-
-- `bridgestor3.2on` — For Tor3.
-
-**********************************************
-
-**Remove bridges:**
-
-- `bridgestor2off` — For Tor2.
-
-- `bridgestor3off` — For Tor3.
-
-These commands ensure efficient management of Tor services and their configurations.
-
-**********************************************
-
-#######################################################################################
-
-Exemple of configuration for browsers or proxychains...
-
-To configure your proxy settings for Tor, set the proxy as socks5 127.0.0.1 9060. For Proxychains or Proxychains4, modify the configuration files located at /etc/proxychains.conf, /etc/proxychains4.conf, or any specific .conf file with the following settings:
-
-
-dynamic_chain
-
-proxy_dns
-
-tcp_read_time_out 15000
-
-tcp_connect_time_out 8000
-
-[ProxyList]
-
-socks4 127.0.0.1 9060
-
-socks5 127.0.0.1 9060
-
-Ensure that these configurations are properly implemented to facilitate effective routing through the Tor network.
 
 ############################################################################################
 
