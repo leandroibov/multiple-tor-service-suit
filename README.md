@@ -270,6 +270,19 @@ socks5 127.0.0.1 9060
 
 Ensure that these configurations are properly implemented to facilitate effective routing through the Tor network.
 
+############################################################################################
+
+Doe monero para nos ajudar: 87JGuuwXzoMGwQAcSD7cvS7D7iacPpN2f5bVqETbUvCgdEmrPZa12gh5DSiKKRgdU7c5n5x1UvZLj8PQ7AAJSso5CQxgjak
+
+Página oficial de segurança digital:
+
+https://traderprofissional.com.br/seguranca-digital.aspx
+
+Vídeo tutorial youtube: em construção...
+
+
+
+
 
 
 
