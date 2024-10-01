@@ -30,8 +30,6 @@ d6d815e3081ebb0af1a8fed7a8fd0b18841270d807d1a2222dc4be37a031e9b6  bridgestor4on
 
 318a6cb03dabd6c2639cf2dbb5875eb921239d61cf55eb3d2a292c28f46cf983  checkbridges
 
-88593532b4e1a3ec8992beb9d91e7a26d85fb9820ae7b5cf79da258b30baa7db  install.sh
-
 b71e1ab55757f02218899e65b2760eb543c285db9d2c7caac8e0de1c55ed2e17  Instructions
 
 2b87113a6505f4baff5628e92e8b6eb2618367d57a6f69c6690570660b9a91f5  menu_tors
@@ -64,7 +62,10 @@ ded9d3d3407879df7fd2f7944c96872cc0c89eed461b57f6228f93b4c978f8ba  stoptor1
 
 921344ad55f55a6a0c54c9d7fcf59baf8d85af1e4ed610757e58fd7c37ecbdb1  stoptor4
 
-e78fd2481430f4e9be849fa4b44167d935744700c8e1ca6d5c93c2572558ea09  uninstall.sh
+6f4dcd23e140f890de697b8d3ac64b13e3af8620b0213bf423700d919c0c0a78  uninstall.sh
+
+4db47d6f5455dc4c7eb52bb4b38e9950604f409142f9786d1506bdd7eeefc8e5  install.sh
+
 
 
 ####################################################################################
