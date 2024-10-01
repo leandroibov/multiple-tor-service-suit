@@ -93,54 +93,115 @@ you can execute the scripts simply by typing their names, as everything will be 
 After run menu_tors ...
 
 Instructions
+
 What Each Command Does?
-1) 3-tors #Creates service files in /etc/systemd/system/
-2) 3-tors-remove #Removes service files in /etc/systemd/system/ if you want to do maintenance!
+
+ 3-tors #Creates service files in /etc/systemd/system/
+ 
+ 3-tors-remove #Removes service files in /etc/systemd/system/ if you want to do maintenance!
+
+ ------------------------------------------------------------------------------------
+
+ ------------------------------------------------------------------------------------
+ 
 
 Tor Instance1
-3) restartor1 #Starts or restarts instance 1 of Tor for 127.0.0.1 9050
-4) statustor1 #Checks the status of instance 1 of Tor
-5) stoptor1 #Stops instance 1 of Tor
-6) bridgestor1on #Adds an obfs4 bridge to instance 1 of Tor
-7) bridgestor1.2on #Adds two obfs4 bridges to instance 1 of Tor
-8) bridgestor1off #Removes all bridges from instance 1 of Tor. /etc/tor/torrc will be as default!
+
+ restartor1 #Starts or restarts instance 1 of Tor for 127.0.0.1 9050
+ 
+ statustor1 #Checks the status of instance 1 of Tor
+ 
+ stoptor1 #Stops instance 1 of Tor
+ 
+ bridgestor1on #Adds an obfs4 bridge to instance 1 of Tor
+ 
+ bridgestor1.2on #Adds two obfs4 bridges to instance 1 of Tor
+ 
+ bridgestor1off #Removes all bridges from instance 1 of Tor. /etc/tor/torrc will be as default!
+
+ ------------------------------------------------------------------------------------
+
+ ------------------------------------------------------------------------------------
+ 
 
 Tor Instance2
-3) restartor2 #Starts or restarts instance 2 of Tor for 127.0.0.2 9060
-4) statustor2 #Checks the status of instance 2 of Tor
-5) stoptor2 #Stops instance 2 of Tor
-6) bridgestor2on #Adds an obfs4 bridge to instance 2 of Tor
-7) bridgestor2.2on #Adds two obfs4 bridges to instance 2 of Tor
-8) bridgestor2off #Removes all bridges from instance 2 of Tor
+
+ restartor2 #Starts or restarts instance 2 of Tor for 127.0.0.2 9060
+ 
+ statustor2 #Checks the status of instance 2 of Tor
+ 
+ stoptor2 #Stops instance 2 of Tor
+ 
+ bridgestor2on #Adds an obfs4 bridge to instance 2 of Tor
+ 
+ bridgestor2.2on #Adds two obfs4 bridges to instance 2 of Tor
+ 
+ bridgestor2off #Removes all bridges from instance 2 of Tor
+
+ ------------------------------------------------------------------------------------
+
+ ------------------------------------------------------------------------------------
+ 
 
 Tor Instance3
-3) restartor3 #Starts or restarts instance 3 of Tor for 127.0.0.3 9062
-4) statustor3 #Checks the status of instance 3 of Tor
-5) stoptor3 #Stops instance 3 of Tor
-6) bridgestor3on #Adds an obfs4 bridge to instance 3 of Tor
-7) bridgestor3.3on #Adds two obfs4 bridges to instance 3 of Tor
-8) bridgestor3off #Removes all bridges from instance 3 of Tor
+
+ restartor3 #Starts or restarts instance 3 of Tor for 127.0.0.3 9062
+ 
+ statustor3 #Checks the status of instance 3 of Tor
+ 
+ stoptor3 #Stops instance 3 of Tor
+ 
+ bridgestor3on #Adds an obfs4 bridge to instance 3 of Tor
+ 
+ bridgestor3.3on #Adds two obfs4 bridges to instance 3 of Tor
+ 
+ bridgestor3off #Removes all bridges from instance 3 of Tor
+
+ ------------------------------------------------------------------------------------
+
+ ------------------------------------------------------------------------------------
 
 Tor Instance4
-4) restartor4 #Starts or restarts instance 4 of Tor for 127.0.0.4 9064
-4) statustor4 #Checks the status of instance 4 of Tor
-5) stoptor4 #Stops instance 4 of Tor
-6) bridgestor4on #Adds an obfs4 bridge to instance 4 of Tor
-7) bridgestor4.4on #Adds two obfs4 bridges to instance 4 of Tor
-8) bridgestor4off #Removes all bridges from instance 4 of Tor
+
+ restartor4 #Starts or restarts instance 4 of Tor for 127.0.0.4 9064
+ 
+ statustor4 #Checks the status of instance 4 of Tor
+ 
+ stoptor4 #Stops instance 4 of Tor
+ 
+ bridgestor4on #Adds an obfs4 bridge to instance 4 of Tor
+ 
+ bridgestor4.4on #Adds two obfs4 bridges to instance 4 of Tor
+ 
+ bridgestor4off #Removes all bridges from instance 4 of Tor
+
+ ------------------------------------------------------------------------------------
+
+ ------------------------------------------------------------------------------------
+ 
 
 Creating proxychains4 .conf files in your ~/Download and /etc
-27) proxychains_3tors #Creates 3 .conf files, each for a different instance in /etc and ~/Downloads for all users!
-28) proxychains-examples #Shows example commands to be executed with the created proxychains4.conf files for each instance!
+
+proxychains_3tors #Creates 3 .conf files, each for a different instance in /etc and ~/Downloads for all users!
+
+proxychains-examples #Shows example commands to be executed with the created proxychains4.conf files for each instance!
+
 Conf files for proxychains created...
+
 proxychains4.2.conf #for Tor instance 2 for 127.0.0.1 9060
+
 proxychains4.3.conf #for Tor instance 3 for 127.0.0.1 9062
+
 proxychains4.4.conf #for Tor instance 4 for 127.0.0.1 9064
+
 /etc/proxychains4.conf #for Tor instance 1 that by default runs on 127.0.0.1 9050
 
+
 Conveniences and maintenance
-30) checkbridges #Checks if the bridges are connecting and working
-0) Exit
+
+checkbridges #Checks if the bridges are connecting and working
+
+------------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------------
 
