@@ -1,0 +1,100 @@
+#!/bin/bash
+
+#proxychains_3tors
+#Developer Leandro Santos - https://github.com/leandroibov
+echo;
+echo; 
+while true; do
+
+echo "------------------------------------------------------------------------------------";
+    echo "Multiple-Tor-Service-Suit Menu";
+    echo "Select a command to execute:"
+    echo;
+    echo "Creating or removing service files and other files for Tor instances";
+    echo "1) 3-tors"
+    echo "2) 3-tors-remove"
+    
+    echo;
+    echo "Tor Instance1";
+    echo "3) restartor1"
+    echo "4) statustor1"
+    echo "5) stoptor1"
+    echo "6) bridgestor1on"
+    echo "7) bridgestor1.2on"
+    echo "8) bridgestor1off"
+    
+    echo;
+    echo "Tor Instance 2";
+    echo "9) restartor2"
+    echo "10) statustor2"
+    echo "11) stoptor2"
+    echo "12) bridgestor2on"
+    echo "13) bridgestor2.2on"
+    echo "14) bridgestor2off"
+    
+    echo;
+    echo "Tor Instance 3";
+    echo "15) restartor3"
+    echo "16) statustor3"
+    echo "17) stoptor3"
+    echo "18) bridgestor3on"
+    echo "19) bridgestor3.2on"
+    echo "20) bridgestor3off"
+    
+    echo;
+    echo "Tor Instance 4";
+    echo "21) restartor4"
+    echo "22) statustor4"
+    echo "23) stoptor4"
+    echo "24) bridgestor4on"
+    echo "25) bridgestor4.2on"
+    echo "26) bridgestor4off"
+    
+    echo;
+    echo "Creating proxychains4 .conf files in your ~/Download";
+    echo "27) proxychains_3tors"
+    echo "28)proxychains-exemples"
+    echo "0) Exit"
+    echo "------------------------------------------------------------------------------------";
+    echo;
+
+    read -p "Enter your choice: " choice
+
+    case $choice in
+        1) 3-tors ;;
+        2) 3-tors-remove ;;
+        3) restartor1 ;;
+        4) statustor1 ;;
+        5) stoptor1 ;;
+        6) bridgestor1on ;;
+        7) bridgestor1.2on ;;
+        8) bridgestor1off ;;
+        9) restartor2 ;;
+        10) statustor2 ;;
+        11) stoptor2 ;;
+        12) bridgestor2on ;;
+        13) bridgestor2.2on ;;
+        14) bridgestor2off ;;
+        15) restartor3 ;;
+        16) statustor3 ;;
+        17) stoptor3 ;;
+        18) bridgestor3on ;;
+        19) bridgestor3.2on ;;
+        20) bridgestor3off ;;
+        21) restartor4 ;;
+        22) statustor4 ;;
+        23) stoptor4 ;;
+        24) bridgestor4on ;;
+        25) bridgestor4.2on ;;
+        26) bridgestor4off ;;
+        27) proxychains_3tors ;;
+        28) proxychains-exemples ;;
+        0) echo "Exiting..."; break ;;
+        *) echo "Invalid choice, please try again." ;;
+    esac
+done
+
+echo;
+
+
+

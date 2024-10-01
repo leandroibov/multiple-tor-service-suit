@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#Exemplos de comandos com proxychains4 usando múltiplas instâncias do tor hidden services
+#Mostra no terminal para montar comando para aplicação desejada!
+#Developer Leandro Santos - https://github.com/leandroibov
+
+echo;
+echo "Examples... of multiple proxychains4 with multiple instances of the Tor service!";
+echo "---------------------------------------------------------------------------------";
+echo "For ~/Download folder of the current user...";
+echo "proxychains4 firefox"; 
+echo "proxychains4 -f ~/Downloads/proxychains4.2.conf ~/Downloads/Cake_nano_wallet/cake_wallet/cake_wallet";
+echo "proxychains4 -f ~/Downloads/proxychains4.3.conf ~/Telegram/Telegram";
+echo "proxychains4 -f ~/Downloads/proxychains4.4.conf ~/Downloads/Electrum/electrum-4.5.5-x86_64.AppImage";
+echo "proxychains4 -f ~/Downloads/proxychains4.4.conf signal-desktop";
+echo "proxychains4 -f ~/Downloads/proxychains4.3.conf brave-browser";
+echo "proxychains4 -f ~/Downloads/proxychains4.2.conf pidgin";
+echo;
+echo "In the folder with the .conf file...";
+echo "proxychains4 -f proxychains4.2.conf firefox";
+echo "proxychains4 -f proxychains4.3.conf ./cake_wallet";
+echo "proxychains4 -f proxychains4.4.conf signal-desktop";
+echo "";
+echo "For /etc folder...";
+echo "proxychains4 -f /etc/proxychains.conf firefox"; 
+echo "proxychains4 -f /etc/proxychains4.2.conf ~/Downloads/Cake_nano_wallet/cake_wallet/cake_wallet";
+echo "proxychains4 -f /etc/proxychains4.3.conf ~/Telegram/Telegram";
+echo "proxychains4 -f /etc/proxychains4.4.conf ~/Downloads/Electrum/electrum-4.5.5-x86_64.AppImage";
+echo "proxychains4 -f /etc/proxychains4.4.conf signal-desktop";
+echo "proxychains4 -f /etc/proxychains4.3.conf brave-browser";
+echo "proxychains4 -f /etc/proxychains4.2.conf pidgin";
+echo "";
+
+
+
+
+
+

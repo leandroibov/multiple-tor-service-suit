@@ -5,7 +5,7 @@
 
 
 echo;
-echo "Creating 3 tor service files in /etc/systemd/system/";
+echo "Creating or Recreating 3 tor service files in /etc/systemd/system/";
 echo "Warning!";
 echo "You need obfs4proxy to run bridges - links below:";
 echo "https://packages.debian.org/buster/amd64/obfs4proxy/download";
@@ -172,17 +172,47 @@ echo;
 #***END tor4
 
 
+echo "---------------------------------------------------------------------------------------------------------------------------";
+echo "INSTRUCTIONS HOW USE IT...";
 echo "3 tor services files created, to run, run with bridges, stop and delete follow:";
+echo "Type menu_tors in your terminal and select your option or... typing the name of the command..."
 echo "stoptor2 to stop tor2, stoptor3 to top tor3 and so on...";
 echo "restartor2 to start or restart tor2, restartor3 to start or restart tor3, and so on...";
 echo "statustor2 to check status of tor2, statustor3 to check status of tor3, and so on...";
 echo "to add 1 bridge obfs4 use: bridgestor2on to tor2, bridgestor3on to tor3, and so on... ";
 echo "to add 2 bridges obfs4 use: bridgestor2.2on to tor2, bridgestor3.2on to tor3, and so on... ";
 echo "To Eliminate Bridges in torrc files use: bridgestor2off to tor2, bridgestor2off to tor3, and so on, and the files will be as original file configuration without bridges!";
-
 echo "";
-echo "Delete all instance files copy command below: ";
-echo "sudo rm -rf /var/tmp/torrc.2 /var/tmp/tor2 /etc/systemd/system/tor2.service /var/tmp/torrc.3 /var/tmp/tor3 /etc/systemd/system/tor3.service /var/tmp/torrc.4 /var/tmp/tor4 /etc/systemd/system/tor4.service";
+echo "---------------------------------------------------------------------------------------------------------------------------";
+echo "Warning about proxychains4 with tor instances...";
+echo "Examples... of multiple proxychains4 with multiple instances of the Tor service!";
+echo "Install proxychains4 before with sudo apt install proxychains4 -y";
+echo "Run the option proxychains_3tors";
+echo "---------------------------------------------------------------------------------";
+echo "For ~/Download folder of the current user...";
+echo "proxychains4 firefox"; 
+echo "proxychains4 -f ~/Downloads/proxychains4.2.conf ~/Downloads/Cake_nano_wallet/cake_wallet/cake_wallet";
+echo "proxychains4 -f ~/Downloads/proxychains4.3.conf ~/Telegram/Telegram";
+echo "proxychains4 -f ~/Downloads/proxychains4.4.conf ~/Downloads/Electrum/electrum-4.5.5-x86_64.AppImage";
+echo "proxychains4 -f ~/Downloads/proxychains4.4.conf signal-desktop";
+echo "proxychains4 -f ~/Downloads/proxychains4.3.conf brave-browser";
+echo "proxychains4 -f ~/Downloads/proxychains4.2.conf pidgin";
+echo;
+echo "In the folder with the .conf file...";
+echo "proxychains4 -f proxychains4.2.conf firefox";
+echo "proxychains4 -f proxychains4.3.conf ./cake_wallet";
+echo "proxychains4 -f proxychains4.4.conf signal-desktop";
+echo "";
+echo "For /etc folder...";
+echo "proxychains4 -f /etc/proxychains.conf firefox"; 
+echo "proxychains4 -f /etc/proxychains4.2.conf ~/Cake_nano_wallet/cake_wallet/cake_wallet";
+echo "proxychains4 -f /etc/proxychains4.3.conf ~/Telegram/Telegram";
+echo "proxychains4 -f /etc/proxychains4.4.conf ~/Electrum/electrum-4.5.5-x86_64.AppImage";
+echo "proxychains4 -f /etc/proxychains4.4.conf signal-desktop";
+echo "proxychains4 -f /etc/proxychains4.3.conf brave-browser";
+echo "proxychains4 -f /etc/proxychains4.2.conf pidgin";
+echo "";
+echo "---------------------------------------------------------------------------------------------------------------------------";
 echo "";
 
 #Delete all tor2.service Files to rebuilding as maintanance

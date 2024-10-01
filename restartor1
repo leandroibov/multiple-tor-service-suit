@@ -1,0 +1,59 @@
+#!/bin/bash
+##############Script################################
+#START TOR SERVICE 2
+echo;
+echo "-------------------------------------------------------------------------------------------------------";
+echo "Configure proxy as socks5 127.0.0.1 9050";
+echo "For Proxychains or Proxychains4 configure /etc/proxychains.conf or /etc/proxychains4.conf or specific .conf file as below!"
+echo "dynamic_chain"
+echo "proxy_dns"
+echo "tcp_read_time_out 15000"
+echo "tcp_connect_time_out 8000"
+echo "[ProxyList]"
+echo "socks4  127.0.0.1 9050"
+echo "socks5 127.0.0.1 9050"
+echo "-------------------------------------------------------------------------------------------------------";
+echo;
+
+
+#Certifique que o tor serviço está rodando;
+sudo echo "Certify of tor hidden service is installed!";
+
+#Restartando o tor instance 1
+sudo echo "Disabling the tor instance 1"
+sudo echo "sudo systemctl disable tor.service;";
+sudo systemctl disable tor.service;
+sudo echo "Stopping the tor instance 1"
+sudo echo "sudo systemctl stop tor.service;";
+sudo systemctl stop tor.service;
+sudo echo "Restarting the tor instance 1"
+sudo echo "sudo systemctl enable tor.service;";
+sudo systemctl enable tor.service;
+sudo echo "";
+sudo echo "sudo systemctl start tor.service;"
+sudo systemctl start tor.service;
+sudo echo "sudo systemctl restart tor.service;"
+sudo systemctl restart tor.service;
+sudo echo "";
+sudo echo "sudo systemctl is-active tor.service;";
+sudo systemctl is-active tor.service;
+sudo echo "sudo systemctl status tor.service;";
+sudo systemctl status tor.service;
+sudo echo "";
+
+echo "------------------------------------------------------------------------------------------------";
+echo "stoptor to stop tor";
+echo "restartor to start or restart tor";
+echo "statustor to check status of tor";
+echo "to add 1 bridge obfs4 use: bridgestoron to tor, bridgestor3on to tor3, and so on... ";
+echo "to add 2 bridges obfs4 use: bridgestor.2on to tor, bridgestor3.2on to tor3, and so on... ";
+echo "To Eliminate Bridges in torrc files use: bridgestoroff to tor";
+echo "------------------------------------------------------------------------------------------------";
+
+
+
+
+
+
+##############Script################################
+

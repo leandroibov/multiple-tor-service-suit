@@ -174,21 +174,23 @@ echo;
 
 
 echo "Coping scripts to /bin";
-echo "sudo chmod +x 3-tors bridgestor2off bridgestor3.2on bridgestor3on bridgestor4off install.sh restartor2 restartor4 statustor3 stoptor2 stoptor4 bridgestor2.2on bridgestor2on bridgestor3off bridgestor4.2on bridgestor4on restartor1 restartor3 statustor2 statustor4 stoptor3";
+echo "sudo chmod +x 3-tors bridgestor1off bridgestor2off bridgestor3off bridgestor4off menu_tors restartor2 statustor1 statustor4 stoptor3 3-tors-remove bridgestor1on bridgestor2on bridgestor3on bridgestor4on proxychains_3tors restartor3 statustor2 stoptor1 stoptor4 bridgestor1.2on bridgestor2.2on bridgestor3.2on bridgestor4.2on restartor1 restartor4 statustor3 stoptor2 /bin;";
 echo "&";
-echo "sudo cp -r 3-tors bridgestor2off bridgestor3.2on bridgestor3on bridgestor4off install.sh restartor2 restartor4 statustor3 stoptor2 stoptor4 bridgestor2.2on bridgestor2on bridgestor3off bridgestor4.2on bridgestor4on restartor1 restartor3 statustor2 statustor4 stoptor3 /bin";
-sudo chmod +x 3-tors bridgestor2off bridgestor3.2on bridgestor3on bridgestor4off restartor2 restartor4 statustor3 stoptor2 stoptor4 bridgestor2.2on bridgestor2on bridgestor3off bridgestor4.2on bridgestor4on restartor3 statustor2 statustor4 stoptor3;
-sudo cp -r 3-tors bridgestor2off bridgestor3.2on bridgestor3on bridgestor4off install.sh restartor2 restartor4 statustor3 stoptor2 stoptor4 bridgestor2.2on bridgestor2on bridgestor3off bridgestor4.2on bridgestor4on restartor3 statustor2 statustor4 stoptor3 /bin
+echo "sudo cp -r 3-tors bridgestor1off bridgestor2off bridgestor3off bridgestor4off menu_tors restartor2 statustor1 statustor4 stoptor3 3-tors-remove bridgestor1on bridgestor2on bridgestor3on bridgestor4on proxychains_3tors restartor3 statustor2 stoptor1 stoptor4 bridgestor1.2on bridgestor2.2on bridgestor3.2on bridgestor4.2on restartor1 restartor4 statustor3 stoptor2 /bin;";
+sudo chmod +x 3-tors bridgestor1off bridgestor2off bridgestor3off bridgestor4off menu_tors restartor2 statustor1 statustor4 stoptor3 3-tors-remove bridgestor1on bridgestor2on bridgestor3on bridgestor4on proxychains_3tors restartor3 statustor2 stoptor1 stoptor4 bridgestor1.2on bridgestor2.2on bridgestor3.2on bridgestor4.2on restartor1 restartor4 statustor3 stoptor2 proxychains-exemples /bin;
+sudo cp -r 3-tors bridgestor1off bridgestor2off bridgestor3off bridgestor4off menu_tors restartor2 statustor1 statustor4 stoptor3 3-tors-remove bridgestor1on bridgestor2on bridgestor3on bridgestor4on proxychains_3tors restartor3 statustor2 stoptor1 stoptor4 bridgestor1.2on bridgestor2.2on bridgestor3.2on bridgestor4.2on restartor1 restartor4 statustor3 stoptor2 proxychains-exemples /bin;
+
+
 echo "";
-echo "Now just type the name of the scripts and the commands will done... ex: ";
-echo "bridgestor3";
-echo "It will configure torrc.3. for instance 3 to use one bridge...";
+
 echo;
 
 
 
-
+echo "---------------------------------------------------------------------------------------------------------------------------";
+echo "INSTRUCTIONS HOW USE IT...";
 echo "3 tor services files created, to run, run with bridges, stop and delete follow:";
+echo "Type menu_tors in your terminal and select your option or... typing the name of the command..."
 echo "stoptor2 to stop tor2, stoptor3 to top tor3 and so on...";
 echo "restartor2 to start or restart tor2, restartor3 to start or restart tor3, and so on...";
 echo "statustor2 to check status of tor2, statustor3 to check status of tor3, and so on...";
@@ -196,16 +198,41 @@ echo "to add 1 bridge obfs4 use: bridgestor2on to tor2, bridgestor3on to tor3, a
 echo "to add 2 bridges obfs4 use: bridgestor2.2on to tor2, bridgestor3.2on to tor3, and so on... ";
 echo "To Eliminate Bridges in torrc files use: bridgestor2off to tor2, bridgestor2off to tor3, and so on, and the files will be as original file configuration without bridges!";
 echo "";
-echo "Warning...";
-echo "The first instance of Tor hidden service is the pattern configured in torrc at /etc/tor/torrc... Our multiple Tor service scripts do not work with this instance";
-echo "To install or remove bridges in /etc/tor/torrc you need do it manually...";
+echo "---------------------------------------------------------------------------------------------------------------------------";
+echo "Warning about proxychains4 with tor instances...";
+echo "Examples... of multiple proxychains4 with multiple instances of the Tor service!";
+echo "---------------------------------------------------------------------------------";
+echo "For ~/Download folder of the current user...";
+echo "proxychains4 firefox"; 
+echo "proxychains4 -f ~/Downloads/proxychains4.2.conf ~/Downloads/Cake_nano_wallet/cake_wallet/cake_wallet";
+echo "proxychains4 -f ~/Downloads/proxychains4.3.conf ~/Telegram/Telegram";
+echo "proxychains4 -f ~/Downloads/proxychains4.4.conf ~/Downloads/Electrum/electrum-4.5.5-x86_64.AppImage";
+echo "proxychains4 -f ~/Downloads/proxychains4.4.conf signal-desktop";
+echo "proxychains4 -f ~/Downloads/proxychains4.3.conf brave-browser";
+echo "proxychains4 -f ~/Downloads/proxychains4.2.conf pidgin";
+echo;
+echo "In the folder with the .conf file...";
+echo "proxychains4 -f proxychains4.2.conf firefox";
+echo "proxychains4 -f proxychains4.3.conf ./cake_wallet";
+echo "proxychains4 -f proxychains4.4.conf signal-desktop";
+echo "";
+echo "For /etc folder...";
+echo "proxychains4 -f /etc/proxychains.conf firefox"; 
+echo "proxychains4 -f /etc/proxychains4.2.conf ~/Downloads/Cake_nano_wallet/cake_wallet/cake_wallet";
+echo "proxychains4 -f /etc/proxychains4.3.conf ~/Telegram/Telegram";
+echo "proxychains4 -f /etc/proxychains4.4.conf ~/Downloads/Electrum/electrum-4.5.5-x86_64.AppImage";
+echo "proxychains4 -f /etc/proxychains4.4.conf signal-desktop";
+echo "proxychains4 -f /etc/proxychains4.3.conf brave-browser";
+echo "proxychains4 -f /etc/proxychains4.2.conf pidgin";
+echo "";
+echo "";
+echo "---------------------------------------------------------------------------------------------------------------------------";
+echo "";
+########
 
-echo "";
-echo "To Delete all tor instance files copy command below: ";
-echo "sudo rm -rf /var/tmp/torrc.2 /var/tmp/tor2 /etc/systemd/system/tor2.service /var/tmp/torrc.3 /var/tmp/tor3 /etc/systemd/system/tor3.service /var/tmp/torrc.4 /var/tmp/tor4 /etc/systemd/system/tor4.service";
-echo "";
+
 ###*****Instruções...
-echo "Commands for Tor Instances ";
+echo "Manual Commands for Tor Instances ";
 echo "To reload the systemd manager configuration, run:"
 echo "sudo systemctl daemon-reload"
 echo;

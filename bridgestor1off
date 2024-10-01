@@ -1,0 +1,44 @@
+#!/bin/bash
+
+#bridgestor1off.sh
+#Developer Leandro Santos - https://github.com/leandroibov
+
+echo "bridgestor1off.sh";
+echo;
+
+
+
+echo;
+echo "Removing bridges for torrc file...";
+
+sudo cat > /etc/tor/torrc << EOF
+SocksPort 9050
+ControlPort 9051
+EOF
+
+echo;
+echo "Verifing torrc.2 file:";
+cat /etc/tor/torrc;
+echo;
+
+sudo echo "Restarting: Disabling the tor instance 2"
+sudo echo "sudo systemctl disable tor2.service;";
+sudo systemctl disable tor2.service;
+sudo echo "Stopping the tor instance 2"
+sudo echo "sudo systemctl stop tor2.service;";
+sudo systemctl stop tor2.service;
+sudo echo "Restarting the tor instance 2"
+sudo echo "sudo systemctl enable tor2.service;";
+sudo systemctl enable tor2.service;
+sudo echo "";
+sudo echo "sudo systemctl start tor2.service;"
+sudo systemctl start tor2.service;
+sudo echo "sudo systemctl restart tor2.service;"
+sudo systemctl restart tor2.service;
+sudo echo "";
+sudo echo "sudo systemctl is-active tor2.service;";
+sudo systemctl is-active tor2.service;
+sudo echo "sudo systemctl status tor2.service;";
+sudo systemctl status tor2.service;
+sudo echo "";
+

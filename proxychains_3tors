@@ -1,0 +1,152 @@
+#!/bin/bash
+#proxychains_3tors
+
+
+#!/bin/bash
+
+# Identifica usuários locais com shell de login
+for user in $(getent passwd | awk -F: '$3 >= 1000 && $7 !~ /(nologin|false)/ {print $1}'); do
+    user_home=$(eval echo ~$user)
+    download_dir="$user_home/Downloads"
+    
+    # Checa se a pasta Downloads existe
+    if [ -d "$download_dir" ]; then
+        # Cria os arquivos de configuração
+        cat > "$download_dir/proxychains4.2.conf" << EOF
+dynamic_chain
+proxy_dns
+tcp_read_time_out 15000
+tcp_connect_time_out 8000
+[ProxyList]
+socks4  127.0.0.1 9060
+socks5 127.0.0.1 9060
+EOF
+echo "Criado...";
+echo "cat $download_dir/proxychains4.2.conf";
+cat $download_dir/proxychains4.2.conf
+echo;
+echo;
+
+        cat > "$download_dir/proxychains4.3.conf" << EOF
+dynamic_chain
+proxy_dns
+tcp_read_time_out 15000
+tcp_connect_time_out 8000
+[ProxyList]
+socks4  127.0.0.1 9062
+socks5 127.0.0.1 9062
+EOF
+echo "Criado...";
+echo "cat $download_dir/proxychains4.3.conf";
+cat $download_dir/proxychains4.3.conf
+echo;
+
+        cat > "$download_dir/proxychains4.4.conf" << EOF
+dynamic_chain
+proxy_dns
+tcp_read_time_out 15000
+tcp_connect_time_out 8000
+[ProxyList]
+socks4  127.0.0.1 9064
+socks5 127.0.0.1 9064
+EOF
+echo "Criado...";
+echo "cat $download_dir/proxychains4.4.conf";
+cat $download_dir/proxychains4.4.conf
+echo;
+        
+        # Define permissões para o usuário correspondente
+        chown "$user:$user" "$download_dir/proxychains4."{2..4}.conf
+    fi
+done
+
+echo;
+echo "Created proxychains.conf files in ~/Downloads of all users of the machine!";
+echo "";
+
+
+
+        sudo cat > "/etc/proxychains4.2.conf" << EOF
+dynamic_chain
+proxy_dns
+tcp_read_time_out 15000
+tcp_connect_time_out 8000
+[ProxyList]
+socks4  127.0.0.1 9060
+socks5 127.0.0.1 9060
+EOF
+echo "Criado...";
+echo "sudo cat /etc/proxychains4.2.conf";
+sudo cat /etc/proxychains4.2.conf
+echo;
+echo;
+
+        sudo cat > "/etc/proxychains4.3.conf" << EOF
+dynamic_chain
+proxy_dns
+tcp_read_time_out 15000
+tcp_connect_time_out 8000
+[ProxyList]
+socks4  127.0.0.1 9062
+socks5 127.0.0.1 9062
+EOF
+echo "Criado...";
+echo "sudo cat /etc/proxychains4.3.conf";
+sudo cat /etc/proxychains4.3.conf
+echo;
+
+        sudo cat > "/etc/proxychains4.4.conf" << EOF
+dynamic_chain
+proxy_dns
+tcp_read_time_out 15000
+tcp_connect_time_out 8000
+[ProxyList]
+socks4  127.0.0.1 9064
+socks5 127.0.0.1 9064
+EOF
+echo "Criado...";
+echo "sudo cat /etc/proxychains4.4.conf";
+sudo cat /etc/proxychains4.4.conf
+echo;
+
+echo;
+echo "Created proxychains.conf files in /etc in the machine!";
+echo "";
+
+echo;
+
+echo "Examples... of multiple proxychains4 with multiple instances of the Tor service!";
+echo "---------------------------------------------------------------------------------";
+
+echo "For ~/Download folder of the current user...";
+echo "proxychains4 firefox"; 
+echo "proxychains4 -f ~/Downloads/proxychains4.2.conf ~/Downloads/Cake_nano_wallet/cake_wallet/cake_wallet";
+echo "proxychains4 -f ~/Downloads/proxychains4.3.conf ~/Telegram/Telegram";
+echo "proxychains4 -f ~/Downloads/proxychains4.4.conf ~/Downloads/Electrum/electrum-4.5.5-x86_64.AppImage";
+echo "proxychains4 -f ~/Downloads/proxychains4.4.conf signal-desktop";
+echo "proxychains4 -f ~/Downloads/proxychains4.3.conf brave-browser";
+echo "proxychains4 -f ~/Downloads/proxychains4.2.conf pidgin";
+echo;
+echo "In the folder with the .conf file...";
+echo "proxychains4 -f proxychains4.2.conf firefox";
+echo "proxychains4 -f proxychains4.3.conf ./cake_wallet";
+echo "proxychains4 -f proxychains4.4.conf signal-desktop";
+echo "";
+echo "For /etc folder...";
+echo "proxychains4 -f /etc/proxychains.conf firefox"; 
+echo "proxychains4 -f /etc/proxychains4.2.conf /etc/Cake_nano_wallet/cake_wallet/cake_wallet";
+echo "proxychains4 -f /etc/proxychains4.3.conf ~/Telegram/Telegram";
+echo "proxychains4 -f /etc/proxychains4.4.conf /etc/Electrum/electrum-4.5.5-x86_64.AppImage";
+echo "proxychains4 -f /etc/proxychains4.4.conf signal-desktop";
+echo "proxychains4 -f /etc/proxychains4.3.conf brave-browser";
+echo "proxychains4 -f /etc/proxychains4.2.conf pidgin";
+echo "";
+
+
+
+
+
+
+
+
+

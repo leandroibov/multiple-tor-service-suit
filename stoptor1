@@ -1,0 +1,21 @@
+#!/bin/bash
+##############Script################################
+#para-tor-daemon2-service
+#stoptor.sh
+
+
+echo;
+#Certifique que o tor serviço está rodando;
+echo "Certifique que o tor serviço está instalado e rodando.";
+
+
+#Restartando o tor hidden service
+echo "Disable tor instance 1";
+echo "sudo systemctl disable tor.service;";
+sudo systemctl disable tor.service;
+echo "Stopping tor instance 1";
+sudo systemctl stop tor.service;
+echo "Verify Status of tor instance 1";
+echo "sudo systemctl status tor.service;";
+sudo systemctl status tor.service;
+
