@@ -85,7 +85,10 @@ E então execute o script com privilégios de superusuário:
 sudo ./install.sh
 
 
-Depois disso, você poderá executar os scripts simplesmente digitando o nome deles, pois tudo será copiado para o diretório /bin.
+Depois disso, digite no terminal menu_tors e selecione as opções desejadas ou
+
+
+você poderá executar os scripts simplesmente digitando o nome deles, pois tudo será copiado para o diretório /bin.
 
 
 ##########################################################################################
@@ -104,7 +107,9 @@ Next, run the script with superuser privileges:
 
 sudo ./install.sh
 
-After that, you can execute the scripts simply by typing their names, as everything will be copied to the /bin directory.
+You can type in terminal menu_tors and select the option you want or
+
+you can execute the scripts simply by typing their names, as everything will be copied to the /bin directory.
 
 ##########################################################################################
 
