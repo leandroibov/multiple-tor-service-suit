@@ -1,9 +1,7 @@
 
 
-####################################################################################
 
-
-HOW TO INSTALL: (ENGLISH)
+# HOW TO INSTALL: (ENGLISH)
 
 Download the files to a folder of your choice on your Linux system. Then, navigate to that folder using the command:
 
@@ -21,7 +19,6 @@ You can type in terminal menu_tors and select the option you want or
 
 you can execute the scripts simply by typing their names, as everything will be copied to the /bin directory.
 
-##########################################################################################
 
 After run menu_tors ...
 
@@ -139,9 +136,8 @@ checkbridges #Checks if the bridges are connecting and working
 ------------------------------------------------------------------------------------
 
 
-############################################################################################
 
-Doe monero para nos ajudar: 87JGuuwXzoMGwQAcSD7cvS7D7iacPpN2f5bVqETbUvCgdEmrPZa12gh5DSiKKRgdU7c5n5x1UvZLj8PQ7AAJSso5CQxgjak
+# Doe monero para nos ajudar: 87JGuuwXzoMGwQAcSD7cvS7D7iacPpN2f5bVqETbUvCgdEmrPZa12gh5DSiKKRgdU7c5n5x1UvZLj8PQ7AAJSso5CQxgjak
 
 Página oficial de segurança digital:
 
