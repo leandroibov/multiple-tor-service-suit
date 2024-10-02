@@ -1,7 +1,7 @@
 
 
 
-# HOW TO INSTALL: (ENGLISH)
+# HOW TO INSTALL:
 
 Download the files to a folder of your choice on your Linux system. Then, navigate to that folder using the command:
 
@@ -145,7 +145,9 @@ Página oficial de segurança digital:
 
 https://traderprofissional.com.br/seguranca-digital.aspx
 
-Vídeo tutorial youtube: em construção...
+### Vídeo tutorial youtube: 
+
+https://www.youtube.com/watch?v=LltPk6mOMu8
 
 
 
